@@ -7,20 +7,31 @@ import (
 	"os"
 )
 
-func main() {
+func FetchHost(valor *[]string) (error) {
 	for _, url := range os.Args[1:] {
-		fmt.Printf("Url Fetch: %v", os.Args[1])
+		fmt.Printf("Url Fetch: %v\n", valor)
 		resp, err := http.Get(url)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "fetch: %v\n", err)
-			os.Exit(1)
+			return fmt.Errorf("%s", err)
 		}
+
 		b, err := ioutil.ReadAll(resp.Body)
 		resp.Body.Close()
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "fetch: reading %s: %v\n", url, err)
-			os.Exit(1)
+			return fmt.Errorf("%s", err)
 		}
 		fmt.Printf("%s", b )
+	}
+	return nil
+}
+
+func main() {
+	valor := os.Args[1:]
+	fmt.Printf("%v", valor)
+	err := FetchHost(&valor)
+	if err != nil {
+		fmt.Println("erro")
 	}
 }
