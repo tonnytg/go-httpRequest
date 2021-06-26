@@ -1,10 +1,17 @@
 ### How to use
+My Fetch is a Simple project to Help you to get some information on website, without browser.
 
-Build our application<br/>
-`go build -o myFetch`
+<hr>
 
-After call with 1 arguments<br/>
-`./myFetch http://gopl.io`
+You can Fetch site: <br />
+`go run main.go http://gopl.io`
 
+You Can Fetch JSON: <br />
+`go run main.go https://jsonplaceholder.typicode.com/users`
 
-Now you have a same return just like curl
+If you want build binary to run any Operation System (OS): <br />
+
+Build your executable: <br/>
+`go build -o myFetch` <br />
+then <br />
+`./myFetch <URL>`
