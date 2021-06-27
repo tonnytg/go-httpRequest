@@ -1,7 +1,8 @@
-### How to use
+### My Fetch URL
 My Fetch is a Simple project to Help you to get some information on website, without browser.
 
 <hr>
+![Codeinspector](https://www.code-inspector.com/project/24231/score/svg)
 
 You can Fetch site: <br />
 `go run main.go http://gopl.io`
