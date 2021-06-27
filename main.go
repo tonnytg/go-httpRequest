@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func FetchHost(valor *[]string) (error) {
+func FetchHost(valor *[]string) error {
 	for _, url := range os.Args[1:] {
 		fmt.Printf("Url Fetch: %v\n", valor)
 		resp, err := http.Get(url)
@@ -22,7 +22,7 @@ func FetchHost(valor *[]string) (error) {
 			fmt.Fprintf(os.Stderr, "fetch: reading %s: %v\n", url, err)
 			return fmt.Errorf("%s", err)
 		}
-		fmt.Printf("%s", b )
+		fmt.Printf("%s", b)
 	}
 	return nil
 }
