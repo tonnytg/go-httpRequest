@@ -7,6 +7,7 @@ import (
 	"os"
 )
 
+// FetchHost get argv return to chek url then return nil or err
 func FetchHost(valor *[]string) error {
 	for _, url := range os.Args[1:] {
 		fmt.Printf("Url Fetch: %v\n", valor)
